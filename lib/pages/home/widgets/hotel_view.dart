@@ -15,7 +15,7 @@ class HotelView extends StatelessWidget {
       margin: const EdgeInsets.only(right: 17, top: 5, bottom: 15),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
       width: size.width * 0.6,
-      height: 350,
+      height: AppLayout.getHeight(350),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Styles.primaryColor.withOpacity(0.7),
@@ -31,10 +31,10 @@ class HotelView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
+            height: AppLayout.getHeight(180),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: Styles.primaryColor.withOpacity(0.8),
+              color: Styles.primaryColor.withOpacity(0.85),
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage("assets/images/${hotel["image"]}"),
