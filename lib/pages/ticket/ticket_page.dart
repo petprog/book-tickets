@@ -1,3 +1,4 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:booktickets/data/app_info_list.dart';
 import 'package:booktickets/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -12,32 +13,189 @@ class TicketPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
     return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.symmetric(
-            horizontal: AppLayout.getWidth(20),
-            vertical: AppLayout.getHeight(20)),
-        children: [
-          Gap(AppLayout.getHeight(40)),
-          Text(
-            "Tickets",
-            style: Styles.headlineStyle1,
-          ),
-          Gap(AppLayout.getHeight(20)),
-          _TopNavTickets(
-            onItemSelected: (index) {
-              pageIndex.value = index;
-            },
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              left: AppLayout.getHeight(15),
+      body: Stack(children: [
+        ListView(
+          padding: EdgeInsets.symmetric(
+              horizontal: AppLayout.getWidth(20),
+              vertical: AppLayout.getHeight(20)),
+          children: [
+            Gap(AppLayout.getHeight(40)),
+            Text(
+              "Tickets",
+              style: Styles.headlineStyle1,
             ),
-            child: TicketView(ticket: ticketList[0]),
-          )
-        ],
-      ),
+            Gap(AppLayout.getHeight(20)),
+            _TopNavTickets(
+              onItemSelected: (index) {
+                pageIndex.value = index;
+              },
+            ),
+            Gap(AppLayout.getHeight(20)),
+            Container(
+              padding: EdgeInsets.only(
+                left: AppLayout.getHeight(15),
+              ),
+              child: TicketView(
+                ticket: ticketList[0],
+                isColor: false,
+                hasBottomRadius: false,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: AppLayout.getWidth(15),
+              ),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(21),
+                      bottomLeft: Radius.circular(21))),
+              margin: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(15)),
+              child: Column(
+                children: [
+                  DashesLine(division: 15, color: Colors.grey.shade500),
+                  Gap(AppLayout.getHeight(20)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ColumnLayout(
+                        firstText: "Flutter DB",
+                        secondText: 'Passenger',
+                        alignment: CrossAxisAlignment.start,
+                        firstTextColor: Colors.grey.shade600,
+                        secondTextolor: Colors.grey.shade500,
+                      ),
+                      ColumnLayout(
+                        firstText: "5221-36745555",
+                        secondText: 'passport',
+                        alignment: CrossAxisAlignment.end,
+                        firstTextColor: Colors.grey.shade600,
+                        secondTextolor: Colors.grey.shade500,
+                      ),
+                    ],
+                  ),
+                  Gap(AppLayout.getHeight(20)),
+                  DashesLine(division: 15, color: Colors.grey.shade500),
+                  Gap(AppLayout.getHeight(20)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ColumnLayout(
+                        firstText: "6526-76311267",
+                        secondText: 'Number of E-Ticket',
+                        alignment: CrossAxisAlignment.start,
+                        firstTextColor: Colors.grey.shade600,
+                        secondTextolor: Colors.grey.shade500,
+                      ),
+                      ColumnLayout(
+                        firstText: "B25G28",
+                        secondText: 'Booking code',
+                        alignment: CrossAxisAlignment.end,
+                        firstTextColor: Colors.grey.shade600,
+                        secondTextolor: Colors.grey.shade500,
+                      ),
+                    ],
+                  ),
+                  Gap(AppLayout.getHeight(20)),
+                  DashesLine(division: 15, color: Colors.grey.shade500),
+                  Gap(AppLayout.getHeight(20)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/images/visa.png",
+                                width: 40,
+                              ),
+                              Text(
+                                " *** 2464",
+                                style: Styles.headlineStyle3,
+                              )
+                            ],
+                          ),
+                          Gap(AppLayout.getHeight(5)),
+                          Text(
+                            "Payment method",
+                            style: Styles.headlineStyle4,
+                          )
+                        ],
+                      ),
+                      ColumnLayout(
+                        firstText: "\$249.99",
+                        secondText: 'Price',
+                        alignment: CrossAxisAlignment.end,
+                        firstTextColor: Colors.grey.shade600,
+                        secondTextolor: Colors.grey.shade500,
+                      ),
+                    ],
+                  ),
+                  Gap(AppLayout.getHeight(20)),
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(AppLayout.getHeight(15)),
+                    child: BarcodeWidget(
+                      data: "https://github.com/petprog",
+                      drawText: false,
+                      barcode: Barcode.code128(),
+                      color: Styles.textColor,
+                      width: double.infinity,
+                      height: AppLayout.getHeight(70),
+                    ),
+                  ),
+                  Gap(AppLayout.getHeight(20)),
+                ],
+              ),
+            ),
+            Gap(AppLayout.getHeight(15)),
+            Container(
+              padding: EdgeInsets.only(
+                left: AppLayout.getHeight(15),
+              ),
+              child: TicketView(
+                ticket: ticketList[0],
+                isColor: true,
+                hasBottomRadius: true,
+              ),
+            ),
+          ],
+        ),
+        Positioned(
+          left: AppLayout.getWidth(19),
+          top: AppLayout.getHeight(AppLayout.getSize(context).height * 0.4),
+          child: Container(
+            padding: const EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Styles.textColor, width: 2),
+            ),
+            child: CircleAvatar(
+              maxRadius: 4,
+              backgroundColor: Styles.textColor,
+            ),
+          ),
+        ),
+        Positioned(
+          right: AppLayout.getWidth(19),
+          top: AppLayout.getHeight(AppLayout.getSize(context).height * 0.4),
+          child: Container(
+            padding: const EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Styles.textColor, width: 2),
+            ),
+            child: CircleAvatar(
+              maxRadius: 4,
+              backgroundColor: Styles.textColor,
+            ),
+          ),
+        ),
+      ]),
     );
   }
 }

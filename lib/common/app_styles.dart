@@ -16,12 +16,12 @@ class Styles {
     fontWeight: FontWeight.w500,
   );
   static TextStyle headlineStyle1 = TextStyle(
-    fontSize: 24,
+    fontSize: 26,
     color: textColor,
     fontWeight: FontWeight.bold,
   );
   static TextStyle headlineStyle2 = TextStyle(
-    fontSize: 20,
+    fontSize: 22,
     color: textColor,
     fontWeight: FontWeight.bold,
   );
@@ -31,7 +31,7 @@ class Styles {
     fontWeight: FontWeight.w500,
   );
   static TextStyle headlineStyle4 = TextStyle(
-    fontSize: 14,
+    fontSize: 12,
     color: Colors.grey.shade500,
     fontWeight: FontWeight.w500,
   );
