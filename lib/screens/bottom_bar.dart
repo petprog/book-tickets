@@ -1,4 +1,6 @@
 import 'package:booktickets/pages/pages.dart';
+import 'package:booktickets/pages/search/search_page.dart';
+import 'package:booktickets/pages/ticket/ticket_page.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +15,8 @@ class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = [
     const Homepage(),
-    const Text("Search"),
-    const Text("Tickets"),
+    SearchPage(),
+    const TicketPage(),
     const Text("Profile"),
   ];
 
