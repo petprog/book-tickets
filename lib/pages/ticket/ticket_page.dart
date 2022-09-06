@@ -1,21 +1,41 @@
+import 'package:booktickets/data/app_info_list.dart';
+import 'package:booktickets/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../common/common.dart';
 
 class TicketPage extends StatelessWidget {
-  const TicketPage({Key? key}) : super(key: key);
+  TicketPage({Key? key}) : super(key: key);
+
+  final ValueNotifier<int> pageIndex = ValueNotifier(0);
 
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Scaffold(
       body: ListView(
+        padding: EdgeInsets.symmetric(
+            horizontal: AppLayout.getWidth(20),
+            vertical: AppLayout.getHeight(20)),
         children: [
+          Gap(AppLayout.getHeight(40)),
           Text(
             "Tickets",
             style: Styles.headlineStyle1,
           ),
-          // _TopNavTickets(onItemSelected: )
+          Gap(AppLayout.getHeight(20)),
+          _TopNavTickets(
+            onItemSelected: (index) {
+              pageIndex.value = index;
+            },
+          ),
+          Container(
+            padding: EdgeInsets.only(
+              left: AppLayout.getHeight(15),
+            ),
+            child: TicketView(ticket: ticketList[0]),
+          )
         ],
       ),
     );
@@ -48,7 +68,7 @@ class _TopNavTicketsState extends State<_TopNavTickets> {
     final size = AppLayout.getSize(context);
     return FittedBox(
       child: Container(
-        padding: const EdgeInsets.all(3.5),
+        padding: const EdgeInsets.all(1.5),
         child: Row(
           children: [
             _NavigationBaritem(

@@ -1,4 +1,4 @@
-import 'package:booktickets/widgets/thick_container.dart';
+import 'package:booktickets/app_widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:booktickets/common/common.dart';
 import 'dart:math';

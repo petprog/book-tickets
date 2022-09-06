@@ -16,7 +16,7 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = [
     const Homepage(),
     SearchPage(),
-    const TicketPage(),
+    TicketPage(),
     const Text("Profile"),
   ];
 

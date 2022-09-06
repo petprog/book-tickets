@@ -1,4 +1,4 @@
-import 'package:booktickets/widgets/double_text_widget.dart';
+import 'package:booktickets/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

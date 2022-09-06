@@ -1,6 +1,5 @@
 import 'package:booktickets/pages/home/widgets/hotel_view.dart';
-import 'package:booktickets/pages/home/widgets/ticket_view.dart';
-import 'package:booktickets/widgets/double_text_widget.dart';
+import 'package:booktickets/app_widgets/app_widgets.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:booktickets/common/common.dart';
