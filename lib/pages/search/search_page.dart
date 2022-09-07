@@ -27,7 +27,7 @@ class SearchPage extends StatelessWidget {
           Text(
             "What are\nyou looking for?",
             style: Styles.headlineStyle1.copyWith(
-              fontSize: AppLayout.getWidth(35),
+              fontSize: AppLayout.getWidth(30),
             ),
           ),
           Gap(

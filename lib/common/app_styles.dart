@@ -16,7 +16,7 @@ class Styles {
     fontWeight: FontWeight.w500,
   );
   static TextStyle headlineStyle1 = TextStyle(
-    fontSize: 26,
+    fontSize: 27,
     color: textColor,
     fontWeight: FontWeight.bold,
   );

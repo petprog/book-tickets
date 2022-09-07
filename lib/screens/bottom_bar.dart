@@ -1,4 +1,5 @@
 import 'package:booktickets/pages/pages.dart';
+import 'package:booktickets/pages/profile/profile_page.dart';
 import 'package:booktickets/pages/search/search_page.dart';
 import 'package:booktickets/pages/ticket/ticket_page.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -17,7 +18,7 @@ class _BottomBarState extends State<BottomBar> {
     const Homepage(),
     SearchPage(),
     TicketPage(),
-    const Text("Profile"),
+    const ProfilePage(),
   ];
 
   void _onBottomNavigationBarItemTapped(int index) {
