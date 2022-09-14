@@ -9,8 +9,19 @@ This project is a starting point for a Flutter application.
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+<p style="background-color:rgb(169,169,169);">
+<img src="screenshots/01.jpg" alt="Login and Register" width = "150" >
+<img src="screenshots/02.jpg" alt="Login and Register" width = "150" >
+<img src="screenshots/03.jpg" alt="Login and Register" width = "150" >
+<img src="screenshots/04.jpg" alt="Login and Register" width = "150" >
+
+## Libraries
+
+These are some of the libraries used on `pubspec.yaml`:
+- fluentui_icons - [link](https://pub.dev/packages/fluentui_icons)
+- get - [link](https://pub.dev/packages/get)
+- gap - [link](https://pub.dev/packages/gap)
+- barcode_widget - [link](https://pub.dev/packages/barcode_widget)
