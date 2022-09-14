@@ -13,10 +13,10 @@ A few resources to get you started if this is your first Flutter project:
 ## Screenshots
 
 <p style="background-color:rgb(169,169,169);">
-<img src="screenshots/01.jpg" alt="Login and Register" width = "150" >
-<img src="screenshots/02.jpg" alt="Login and Register" width = "150" >
-<img src="screenshots/03.jpg" alt="Login and Register" width = "150" >
-<img src="screenshots/04.jpg" alt="Login and Register" width = "150" >
+<img src="screenshots/01.jpg" alt="Home Page" width = "150" >
+<img src="screenshots/02.jpg" alt="Search Page" width = "150" >
+<img src="screenshots/03.jpg" alt="Ticket Page" width = "150" >
+<img src="screenshots/04.jpg" alt="Profile Page" width = "150" >
 
 ## Libraries
 
